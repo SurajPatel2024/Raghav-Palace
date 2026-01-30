@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Raghav Palace Banquet & Lawn</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #7b1e1e;
+      --secondary: #b33a3a;
+      --light: #fafafa;
+      --dark: #333;
+      --whatsapp: #25d366;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+    body { background: var(--light); color: var(--dark); line-height: 1.6; }
+
+    /* HEADER / HERO */
+    header {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://i.ibb.co/m5XSrPGB/1769772790823.jpg') center/cover no-repeat;
+      color: #fff;
+      min-height: 95vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    header h1 { font-size: clamp(2.2rem, 6vw, 4rem); margin-bottom: 15px; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
+    header p { font-size: 1.1rem; max-width: 700px; font-weight: 300; }
+
+    .hero-buttons {
+      margin-top: 40px;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    /* BUTTONS - REMOVED UNDERLINES */
+    .btn {
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none !important; /* Forces no underline */
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-primary { background: var(--primary); color: #fff; border: 2px solid var(--primary); }
+    .btn-primary:hover { background: var(--secondary); border-color: var(--secondary); transform: translateY(-3px); }
+
+    .btn-outline { border: 2px solid #fff; color: #fff; }
+    .btn-outline:hover { background: #fff; color: var(--primary); transform: translateY(-3px); }
+
+    /* FLOATING WHATSAPP - REMOVED UNDERLINE */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: var(--whatsapp);
+      color: #FFF;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+      z-index: 10000;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none !important; /* Fix for icon underline */
+      transition: all 0.3s ease;
+    }
+    .whatsapp-float:hover { transform: scale(1.1); background-color: #128C7E; color: #fff; }
+
+    /* NAVBAR */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(5px);
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 18px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    nav a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+    nav a:hover { color: var(--primary); }
+
+    section { padding: 80px 20px; max-width: 1200px; margin: auto; }
+    .section-title { text-align: center; margin-bottom: 50px; }
+    .section-title h2 { color: var(--primary); font-size: clamp(1.8rem, 4vw, 2.5rem); position: relative; display: inline-block; padding-bottom: 10px; }
+    .section-title h2::after { content: ''; position: absolute; width: 60%; height: 3px; background: var(--secondary); bottom: 0; left: 20%; }
+
+    /* SERVICES */
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+    .card { background: #fff; border-radius: 20px; padding: 40px 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; transition: 0.3s; border-bottom: 4px solid transparent; }
+    .card:hover { transform: translateY(-10px); border-color: var(--primary); }
+    .card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 20px; }
+
+    /* GALLERY */
+    .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 15px; }
+    .gallery img { width: 100%; height: 250px; object-fit: cover; border-radius: 12px; transition: 0.4s; }
+    .gallery img:hover { transform: scale(1.02); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+
+    /* CONTACT */
+    .contact { background: linear-gradient(135deg, var(--primary), #4a1111); color: #fff; border-radius: 30px; padding: 60px 20px; text-align: center; }
+    .contact h2 { margin-bottom: 20px; color: #fff; }
+    .contact-info { margin-bottom: 30px; font-size: 1.1rem; }
+
+    footer { background: #111; color: #888; text-align: center; padding: 30px; font-size: 0.85rem; border-top: 1px solid #222; }
+
+    @media (max-width: 600px) {
+      .whatsapp-float { bottom: 20px; right: 20px; width: 55px; height: 55px; font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+<a href="https://wa.me/917985141712?text=Hi,%20I'm%20interested%20in%20booking%20Raghav%20Palace!" class="whatsapp-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<header>
+  <h1>Raghav Palace Banquet & Lawn</h1>
+  <p>Premium Venue for Weddings, Receptions, Parties & Corporate Events</p>
+  <div class="hero-buttons">
+    <a href="#contact" class="btn btn-primary">Book Your Event</a>
+    <a href="tel:+917985141712" class="btn btn-outline"><i class="fas fa-phone"></i> Call Now</a>
+  </div>
+</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+  <div class="section-title">
+    <h2>About Raghav Palace</h2>
+  </div>
+  <div style="text-align: center; max-width: 850px; margin: auto;">
+    <p>Raghav Palace Banquet & Lawn is a premium event destination designed to host unforgettable celebrations. From luxurious weddings to elegant corporate gatherings, our venue combines modern facilities, spacious interiors, and exceptional hospitality to make your special day perfect.</p>
+  </div>
+</section>
+
+<section id="services">
+  <div class="section-title">
+    <h2>Our Services</h2>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <i class="fas fa-heart"></i>
+      <h3>Luxury Weddings</h3>
+      <p>Grand wedding arrangements with stunning décor and flawless execution.</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-hotel"></i>
+      <h3>Banquet Hall</h3>
+      <p>Fully air-conditioned banquet hall with modern amenities.</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-leaf"></i>
+      <h3>Open Lawn</h3>
+      <p>Beautiful, lush green open lawn ideal for outdoor events and receptions.</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-palette"></i>
+      <h3>Catering & Decor</h3>
+      <p>Custom catering and décor solutions to match your style and budget.</p>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="section-title">
+    <h2>Gallery</h2>
+  </div>
+  <div class="gallery">
+    <img src="https://i.ibb.co/jPWQr7y5/1769770775535.jpg" alt="Event">
+    <img src="https://i.ibb.co/HfP3y7mP/1769771113674.jpg" alt="Lighting">
+    <img src="https://i.ibb.co/FLsS8Db0/1769770765663.jpg" alt="Wedding">
+    <img src="https://i.ibb.co/p6sF45Z6/1769771130013.jpg" alt="Banquet">
+    <img src="https://i.ibb.co/dsSTPMrP/1769771121001.jpg" alt="Lawn">
+    <img src="https://i.ibb.co/XZHDRDMy/1769771612911.jpg" alt="Reception">
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="section-title">
+    <h2 style="color: #fff;">Contact Us</h2>
+  </div>
+  <div class="contact-info">
+    <p><strong><i class="fas fa-map-marker-alt"></i> Address:</strong> Raghav Palace Banquet & Lawn</p>
+    <p><strong><i class="fas fa-phone"></i> Phone:</strong> +91 79851 41712</p>
+    <p><strong><i class="fas fa-envelope"></i> Email:</strong> info@raghavpalace.com</p>
+  </div>
+
+  <div style="margin:30px auto; max-width:900px; border-radius:20px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,0.3);">
+    <iframe src="https://www.google.com/maps?q=Raghav+Palace+Banquet+and+Lawn&output=embed" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+
+  <div style="margin-top: 30px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+    <a href="https://maps.app.goo.gl/tsKQvrxHMzb2EqVSA" target="_blank" class="btn btn-outline">
+      <i class="fas fa-directions"></i> Get Directions
+    </a>
+    <a href="https://wa.me/917985141712" class="btn btn-outline" style="background:#25d366; border-color:#25d366;">
+      <i class="fab fa-whatsapp"></i> WhatsApp Booking
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Raghav Palace Banquet & Lawn. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
+ 
