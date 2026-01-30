@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -42,12 +42,12 @@
       justify-content: center;
     }
 
-    /* BUTTONS - REMOVED UNDERLINES */
+    /* BUTTONS */
     .btn {
       padding: 14px 32px;
       border-radius: 50px;
       font-weight: 600;
-      text-decoration: none !important; /* Forces no underline */
+      text-decoration: none !important;
       transition: all 0.3s ease;
       display: inline-flex;
       align-items: center;
@@ -60,7 +60,7 @@
     .btn-outline { border: 2px solid #fff; color: #fff; }
     .btn-outline:hover { background: #fff; color: var(--primary); transform: translateY(-3px); }
 
-    /* FLOATING WHATSAPP - REMOVED UNDERLINE */
+    /* FLOATING WHATSAPP */
     .whatsapp-float {
       position: fixed;
       bottom: 30px;
@@ -77,7 +77,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      text-decoration: none !important; /* Fix for icon underline */
+      text-decoration: none !important;
       transition: all 0.3s ease;
     }
     .whatsapp-float:hover { transform: scale(1.1); background-color: #128C7E; color: #fff; }
@@ -91,9 +91,10 @@
       backdrop-filter: blur(5px);
       display: flex;
       justify-content: center;
-      gap: 30px;
+      gap: 20px;
       padding: 18px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      flex-wrap: wrap;
     }
 
     nav a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
@@ -103,6 +104,27 @@
     .section-title { text-align: center; margin-bottom: 50px; }
     .section-title h2 { color: var(--primary); font-size: clamp(1.8rem, 4vw, 2.5rem); position: relative; display: inline-block; padding-bottom: 10px; }
     .section-title h2::after { content: ''; position: absolute; width: 60%; height: 3px; background: var(--secondary); bottom: 0; left: 20%; }
+
+    /* MANAGER SECTION SPECIFIC */
+    .manager-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background: #fff;
+      padding: 40px;
+      border-radius: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+    .manager-img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid var(--primary);
+      margin-bottom: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
 
     /* SERVICES */
     .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
@@ -124,6 +146,7 @@
 
     @media (max-width: 600px) {
       .whatsapp-float { bottom: 20px; right: 20px; width: 55px; height: 55px; font-size: 28px; }
+      nav { gap: 10px; }
     }
   </style>
 </head>
@@ -144,6 +167,7 @@
 
 <nav>
   <a href="#about">About</a>
+  <a href="#manager">Manager</a>
   <a href="#services">Services</a>
   <a href="#gallery">Gallery</a>
   <a href="#contact">Contact</a>
@@ -155,6 +179,20 @@
   </div>
   <div style="text-align: center; max-width: 850px; margin: auto;">
     <p>Raghav Palace Banquet & Lawn is a premium event destination designed to host unforgettable celebrations. From luxurious weddings to elegant corporate gatherings, our venue combines modern facilities, spacious interiors, and exceptional hospitality to make your special day perfect.</p>
+  </div>
+</section>
+
+<section id="manager">
+  <div class="section-title">
+    <h2>Our Management</h2>
+  </div>
+  <div class="manager-card">
+    <img src="https://i.ibb.co/LDR7km80/1769776686085.jpg" alt="Manager Photo" class="manager-img">
+    <h3 style="margin-bottom: 5px;">Mr. Vipin Singh</h3>
+    <p style="color: var(--primary); font-weight: 600; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 15px;">General Manager</p>
+    <p style="max-width: 700px; color: #555; font-style: italic;">
+      "At Raghav Palace, we believe every guest deserves a royal experience. My team and I are dedicated to ensuring that your special moments are managed with the utmost care, precision, and hospitality."
+    </p>
   </div>
 </section>
 
@@ -210,12 +248,13 @@
     <p><strong><i class="fas fa-envelope"></i> Email:</strong> info@raghavpalace.com</p>
   </div>
 
-  <div style="margin:30px auto; max-width:900px; border-radius:20px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,0.3);">
+ <div style="margin:30px auto; max-width:900px; border-radius:20px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,0.3);">
     <iframe src="https://www.google.com/maps?q=Raghav+Palace+Banquet+and+Lawn&output=embed" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
   </div>
 
+
   <div style="margin-top: 30px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-    <a href="https://maps.app.goo.gl/tsKQvrxHMzb2EqVSA" target="_blank" class="btn btn-outline">
+    <a href="https://maps.google.com" target="_blank" class="btn btn-outline">
       <i class="fas fa-directions"></i> Get Directions
     </a>
     <a href="https://wa.me/917985141712" class="btn btn-outline" style="background:#25d366; border-color:#25d366;">
@@ -230,4 +269,3 @@
 
 </body>
 </html>
- 
