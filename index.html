@@ -148,6 +148,111 @@
       .whatsapp-float { bottom: 20px; right: 20px; width: 55px; height: 55px; font-size: 28px; }
       nav { gap: 10px; }
     }
+    
+    .package-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.package-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  border-top: 5px solid var(--primary);
+}
+
+.package-card h3 {
+  color: var(--primary);
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.package-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.package-card ul li {
+  padding: 8px 0;
+  border-bottom: 1px dashed #ddd;
+  font-size: 0.95rem;
+}
+
+.package-note {
+  margin-top: 40px;
+  text-align: center;
+  font-weight: 600;
+  color: #b33a3a;
+}
+
+
+#lawn-package {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.lawn-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.price-box, .restriction-box {
+  background: #fff;
+  border-radius: 20px;
+  padding: 35px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.price-box {
+  border-top: 6px solid #7b1e1e;
+  text-align: center;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #7b1e1e;
+  margin: 15px 0;
+}
+
+.price span {
+  font-size: 1rem;
+  color: #555;
+}
+
+.facility-list {
+  list-style: none;
+  padding: 0;
+}
+
+.facility-list li {
+  padding: 10px;
+  border-bottom: 1px dashed #ddd;
+}
+
+.restriction-box {
+  border-top: 6px solid #b33a3a;
+}
+
+.restriction-box ul {
+  padding-left: 20px;
+}
+
+.restriction-box li {
+  margin-bottom: 10px;
+}
+
+.note {
+  margin-top: 40px;
+  text-align: center;
+  font-weight: 600;
+  color: #b33a3a;
+}
+
   </style>
 </head>
 <body>
@@ -189,7 +294,7 @@
   <div class="manager-card">
     <img src="https://i.ibb.co/LDR7km80/1769776686085.jpg" alt="Manager Photo" class="manager-img">
     <h3 style="margin-bottom: 5px;">Mr. Vipin Singh</h3>
-    <p style="color: var(--primary); font-weight: 600; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 15px;">General Manager</p>
+    <p style="color: var(--primary); font-weight: 600; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 15px;">Managing Director</p>
     <p style="max-width: 700px; color: #555; font-style: italic;">
       "At Raghav Palace, we believe every guest deserves a royal experience. My team and I are dedicated to ensuring that your special moments are managed with the utmost care, precision, and hospitality."
     </p>
@@ -222,6 +327,110 @@
       <p>Custom catering and décor solutions to match your style and budget.</p>
     </div>
   </div>
+  
+  
+  <section id="packages">
+  <div class="section-title">
+    <h2>हमारे पैकेज</h2>
+  </div>
+
+  <div class="package-grid">
+
+    <!-- Tent Package -->
+    <div class="package-card">
+      <h3>टेंट पैकेज</h3>
+      <ul>
+        <li>VIP गोल्डन कुर्सी – 100 पीस</li>
+        <li>VIP कुर्सी – 50 पीस</li>
+        <li>फाइबर कुर्सी – 50 पीस</li>
+        <li>VIP सोफा – 20 पीस</li>
+        <li>टेबल बड़ा – 8 पीस</li>
+        <li>टेबल छोटा – 4 पीस</li>
+        <li>टेबल – 60 पीस</li>
+        <li>कवर कुर्सी – 50 पीस</li>
+        <li>VIP पंडाल – 12 × 30</li>
+        <li>VIP स्टेज – 12 × 25</li>
+      </ul>
+    </div>
+
+    <!-- Halwai Package -->
+    <div class="package-card">
+      <h3>हलवाई पैकेज</h3>
+      <ul>
+        <li>चुल्हा – 20 पीस</li>
+        <li>तवा – 20 पीस</li>
+        <li>कढ़ाही – 25 पीस</li>
+        <li>ड्रम – 5 पीस</li>
+        <li>बाल्टी – 10 पीस</li>
+        <li>काउंटर – 10 पीस</li>
+        <li>करछी – 10 पीस</li>
+        <li>छन्नी – 10 पीस</li>
+        <li>झारा – 4 पीस</li>
+      </ul>
+    </div>
+
+    <!-- Light Decoration -->
+    <div class="package-card">
+      <h3>लाइट डेकोरेशन</h3>
+      <ul>
+        <li>स्टेज डेकोरेशन</li>
+        <li>फूल लाइट</li>
+        <li>LED लाइट – 100 पीस</li>
+        <li>जनरेटर – 7.5 KVA</li>
+        <li>जनरेटर – 63 KVA</li>
+      </ul>
+    </div>
+
+  </div>
+
+
+ 
+</section>
+
+
+
+<section id="lawn-package">
+  <div class="section-title">
+    <h2>लॉन पैकेज</h2>
+  </div>
+
+  <div class="lawn-box">
+
+    <div class="price-box">
+      <h3>💰 लॉन पैकेज मूल्य</h3>
+      <p class="price">₹ 1,51,000 <span>/ केवल</span></p>
+
+      <ul class="facility-list">
+        <li>AC रूम – 2</li>
+        <li>हॉल – 1</li>
+        <li>बैंक्वेट हॉल – 1</li>
+        <li>स्टोर रूम – 1</li>
+        <li>किचन – 1</li>
+      </ul>
+    </div>
+
+    <div class="restriction-box">
+      <h3>⚠️ नियम व शर्तें</h3>
+      <ul>
+        <li>रात 12 बजे के बाद कोई सर्विस नहीं दी जाएगी।</li>
+        <li>किसी भी प्रकार का एडवांस वापस नहीं किया जाएगा।</li>
+        <li>डी.जे. साउंड या किसी भी प्रकार का कार्यक्रम रात 10 बजे के अंदर बंद करना अनिवार्य है।</li>
+        <li>लॉन के अंदर आतिशबाजी एवं पटाखों पर पूर्णतः प्रतिबंध है।</li>
+        <li>बुकिंग रद्द करने पर एडवांस राशि अगली बुकिंग में ही समायोजित होगी।</li>
+        <li>फूड स्टॉल एवं किचन एरिया की सफाई ग्राहक द्वारा कराई जाएगी।</li>
+        <li>लॉन के बाहर किसी भी प्रकार की सर्विस उपलब्ध नहीं होगी।</li>
+        <li>अतिरिक्त सामान का चार्ज अलग से लिया जाएगा।</li>
+        <li>कार्यक्रम से 15 दिन पहले पूरी राशि जमा करना अनिवार्य है।</li>
+        <li>किसी भी प्रकार की तोड़-फोड़ या नुकसान की भरपाई ग्राहक द्वारा की जाएगी।</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <p class="note">
+    📌 नोट: साफ-सफाई, बर्तन धुलाई एवं डीजे पार्टी का खर्च अलग से देय होगा।
+  </p>
+</section>
 </section>
 
 <section id="gallery">
@@ -238,16 +447,13 @@
   </div>
 </section>
 
-<section id="contact" class="contact">
-  <div class="section-title">
-    <h2 style="color: #fff;">Contact Us</h2>
-  </div>
-  <div class="contact-info">
-    <p><strong><i class="fas fa-map-marker-alt"></i> Address:</strong> Raghav Palace Banquet & Lawn</p>
-    <p><strong><i class="fas fa-phone"></i> Phone:</strong> +91 79851 41712</p>
-    <p><strong><i class="fas fa-envelope"></i> Email:</strong> info@raghavpalace.com</p>
-  </div>
 
+
+
+
+
+
+ 
 <section id="contact" class="contact">
   <div class="section-title">
     <h2 style="color: #fff;">Contact Us</h2>
@@ -259,20 +465,21 @@
   </div>
 
   <div style="margin:30px auto; max-width:900px; border-radius:20px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,0.3);">
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.410714155122!2d82.92629697525895!3d25.28915697764954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398e33001063b227%3A0x92ecfeb118149709!2sRaghav%20pales%20Benkvet%20%26%20lown!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
-      width="100%" 
-      height="350" 
-      style="border:0;" 
-      allowfullscreen="" 
-      loading="lazy">
-    </iframe>
+<iframe
+  src="https://www.google.com/maps?q=25.290989,82.927815&output=embed"
+  width="100%"
+  height="350"
+  style="border:0;"
+  allowfullscreen=""
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
   </div>
 
   <div style="margin-top: 30px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-    <a href="https://www.google.com/maps/dir/?api=1&destination=Raghav+pales+Benkvet+%26+lown&destination_place_id=ChIJJ7JjEAAzjjkRCZcUGBz-7JI" target="_blank" class="btn btn-outline">
-      <i class="fas fa-directions"></i> Get Directions
-    </a>
+  <a href="https://maps.app.goo.gl/zS85MFYVUvU47MKb9" target="_blank" class="btn btn-outline" style="margin-top:20px;">Get Directions</a>
+
     <a href="https://wa.me/917985141712" class="btn btn-outline" style="background:#25d366; border-color:#25d366;">
       <i class="fab fa-whatsapp"></i> WhatsApp Booking
     </a>
@@ -287,4 +494,5 @@
 </footer>
 
 </body>
-</html>
+       </html>
+        
