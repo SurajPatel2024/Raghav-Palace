@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -54,6 +54,7 @@
       gap: 8px;
     }
 
+    
     .btn-primary { background: var(--primary); color: #fff; border: 2px solid var(--primary); }
     .btn-primary:hover { background: var(--secondary); border-color: var(--secondary); transform: translateY(-3px); }
 
@@ -289,6 +290,91 @@
       <a href="tel:+917985141712" class="btn btn-outline">
         <i class="fas fa-phone"></i> Call Now
       </a>
+      <style>
+        /* Container to handle the animated border */
+ 
+  
+.music-btn-container {
+  position: relative;
+  padding: 3px; /* This creates the border thickness */
+  border-radius: 50px;
+  display: inline-block;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+/* The Animated Border (The "Snake" Effect) */
+.music-btn-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    transparent, 
+    var(--primary), 
+    #ffcc00, 
+    var(--secondary), 
+    transparent 30%
+  );
+  animation: rotateBorder 3s linear infinite;
+  display: none; /* Hidden by default */
+}
+
+/* Show animation only when playing */
+.music-btn-container.playing::before {
+  display: block;
+}
+
+/* The Actual Button */
+#actionBtn {
+  position: relative;
+  z-index: 1;
+  background: var(--primary);
+  color: white;
+  border: none;
+  backdrop-filter: blur(10px);
+  padding: 12px 28px;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  background: #7C46F7;
+}
+
+/* State when music is playing */
+.music-btn-container.playing #actionBtn {
+  background: rgba(0, 0, 0, 0.8); /* Dark glass look */
+  color: #fff;
+}
+
+/* Keyframes for rotation */
+@keyframes rotateBorder {
+  100% { transform: rotate(360deg); }
+}
+
+/* Smooth Pulse for the whole button */
+@keyframes softPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.music-btn-container.playing {
+  animation: softPulse 2s infinite ease-in-out;
+}
+
+
+      </style>
+ <div class="music-btn-container" id="btnWrapper">
+  <button id="actionBtn" class="btn"   onclick="toggleMusic()">
+    Play Music <i class="fas fa-music"></i>
+  </button>
+</div>
+
+    <audio id="myAudio" loop>
+        <source src="https://res.cloudinary.com/dcuaulrax/video/upload/v1770557319/Mubarak_Mubarak_-_Lofi_Mix_lvejcz.mp3" type="audio/mpeg">
+        Aapka browser audio support nahi karta.
+    </audio>
     </div>
   </div>
 </header>
@@ -478,24 +564,23 @@
   </div>
 
   <div class="video-gallery">
+    <video controls preload="metadata" poster="https://i.ibb.co/HfP3y7mP/1769771113674.jpg">
+      <source src="https://res.cloudinary.com/dcuaulrax/video/upload/v1770551046/WhatsApp_Video_2026-02-07_at_6.39.08_PM_uyu8h2.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
 
-  <video autoplay muted loop playsinline preload="metadata"
-    poster="https://i.ibb.co/HfP3y7mP/1769771113674.jpg">
-    <source src="https://res.cloudinary.com/dcuaulrax/video/upload/v1770551046/WhatsApp_Video_2026-02-07_at_6.39.08_PM_uyu8h2.mp4" type="video/mp4">
-  </video>
+    <video controls preload="metadata">
+      <source src="https://res.cloudinary.com/dcuaulrax/video/upload/v1770552088/WhatsApp_Video_2026-02-07_at_6.39.07_PM_ecnvp0.mp4" type="video/mp4">
+      
+    </video>
 
-  <video autoplay muted loop playsinline preload="metadata"
-    >
-    <source src="https://res.cloudinary.com/dcuaulrax/video/upload/v1770552088/WhatsApp_Video_2026-02-07_at_6.39.07_PM_ecnvp0.mp4" type="video/mp4">
-  </video>
-    <video autoplay muted loop playsinline preload="metadata"
-    >
-    <source src="https://res.cloudinary.com/dcuaulrax/video/upload/v1770552043/WhatsApp_Video_2026-02-07_at_6.26.56_PM_ljhu3k.mp4" type="video/mp4">
-  </video>
-
-</div>
-
+    <video controls preload="metadata">
+      <source src="https://res.cloudinary.com/dcuaulrax/video/upload/v1770552043/WhatsApp_Video_2026-02-07_at_6.26.56_PM_ljhu3k.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
 </section>
+
 
 
 
@@ -536,8 +621,39 @@
 </section>
 
 
+  <script>
+    const audio = document.getElementById("myAudio");
+    const btn = document.getElementById("actionBtn");
+    const wrapper = document.getElementById("btnWrapper");
 
- 
+    function toggleMusic() {
+        if (audio.paused) {
+            audio.play().then(() => {
+                btn.innerHTML = 'Pause Music <i class="fas fa-pause"></i>';
+                wrapper.classList.add("playing"); // Starts border animation
+            }).catch(err => {
+                alert("Please interact with the page first to play music.");
+            });
+        } else {
+            audio.pause();
+            btn.innerHTML = 'Play Music <i class="fas fa-music"></i>';
+            wrapper.classList.remove("playing"); // Stops border animation
+        }
+    }
+
+    // Auto-pause when videos play
+    document.querySelectorAll('video').forEach(vid => {
+        vid.onplay = () => {
+            audio.pause();
+            btn.innerHTML = 'Play Music <i class="fas fa-music"></i>';
+            wrapper.classList.remove("playing");
+        };
+    });
+</script>
+
+
+
+
 <footer>
   <p>© 2026 Raghav Palace Banquet & Lawn. All Rights Reserved.</p>
 </footer>
