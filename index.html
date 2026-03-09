@@ -1,4 +1,4 @@
-   <!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -146,7 +146,7 @@
     footer { background: #111; color: #888; text-align: center; padding: 30px; font-size: 0.85rem; border-top: 1px solid #222; }
 
     @media (max-width: 600px) {
-      .whatsapp-float { bottom: 20px; right: 20px; width: 55px; height: 55px; font-size: 28px; }
+      .whatsapp-float { bottom: 80px; right: 20px; width: 55px; height: 55px; font-size: 28px; }
       nav { gap: 10px; }
     }
     
@@ -599,7 +599,7 @@
     <h2 style="color: #fff;">Contact Us</h2>
   </div>
   <div class="contact-info">
-    <p><strong><i class="fas fa-map-marker-alt"></i> Address:</strong> Rohniya Thana, Power House Road, Kesharipur, Varanasi, Uttar Pradesh 221107</p>
+    <p><strong><i class="fas fa-map-marker-alt"></i> Address:</strong> Rohaniya Thana, Power House Road, Kesharipur, Varanasi, Uttar Pradesh 221107</p>
     <p><strong><i class="fas fa-phone"></i> Phone:</strong> +91 79851 41712</p>
     <p><strong><i class="fas fa-envelope"></i> Email:</strong> Singhvipin942@gmail.com</p>
   </div>
@@ -656,13 +656,48 @@
         };
     });
 </script>
+<style>
+  footer {
+    padding: 20px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa; /* Light background for contrast */
+  }
 
+  .dev-link {
+    color: #d4a017; /* A gold color to match a "Palace" theme */
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
 
+  /* The Animation */
+  .dev-link:hover {
+    color: #b8860b;
+    transform: translateY(-3px) scale(1.05); /* Lifts up slightly */
+    text-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+    animation: glow 1.5s infinite alternate;
+  }
 
+  @keyframes glow {
+    from { text-shadow: 0 0 2px #fff, 0 0 5px #d4a017; }
+    to { text-shadow: 0 0 5px #fff, 0 0 15px #d4a017; }
+  }
+</style>
 
 <footer>
-  <p>© 2026 Raghav Palace Banquet & Lawn. All Rights Reserved.</p>
+  <p>
+    © 2026 Raghav Palace Banquet & Lawn. All Rights Reserved. | 
+    Developed by 
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSd5qfkGXL71LBWMlMlXv-m1Eu8-83anbnQgD-RBb9zGGb7FUQ/viewform?usp=publish-editor" target="_blank" class="dev-link">
+      Suraj Patel
+    </a>
+  </p>
 </footer>
+
+
 
 </body>
  </html>
